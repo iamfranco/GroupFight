@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en" class="sr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Group Fight</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap" rel="stylesheet">
+</head>
+<body>
+    <canvas></canvas>
+
+    <div id="welcomePanel">
+        <div id="welcomePanel_title">Group Fight!</div>
+        <table id="welcomePanel_table">
+            <tr>
+                <td></td>
+                <td><div class="circle" id="g1_color"></div></td>
+                <td><div class="circle" id="g2_color"></div></td>
+            </tr>
+            <tr>
+                <td>Group Name</td>
+                <td><input type="text" id="g1_name" value="Humans"></td>
+                <td><input type="text" id="g2_name" value="Zombies"></td>
+            </tr>
+            <tr>
+                <td>Population</td>
+                <td><input type="number" id="g1_population" value="1000" min="1" step="1"></td>
+                <td><input type="number" id="g2_population" value="10" min="1" step="1"></td>
+            </tr>
+            <tr>
+                <td>Attack Type</td>
+                <td>
+                    <select id="g1_attackType">
+                        <option value="kill" selected="selected">Kill</option>
+                        <option value="infect">Infect</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="g2_attackType">
+                        <option value="kill">Kill</option>
+                        <option value="infect" selected="selected">Infect</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="hiddenRow">
+                <td>Attack Probability</td>
+                <td><input type="number" id="g1_attackProb" value="0.5" min="0" max="1" step="0.1"></td>
+                <td><input type="number" id="g2_attackProb" value="0.7" min="0" max="1" step="0.1"></td>
+            </tr>
+            <tr class="hiddenRow">
+                <td>Defend Probability</td>
+                <td><input type="number" id="g1_defendProb" value="0.2" min="0" max="1" step="0.1"></td>
+                <td><input type="number" id="g2_defendProb" value="0.3" min="0" max="1" step="0.1"></td>
+            </tr>
+            <tr class="hiddenRow">
+                <td>Run Direction</td>
+                <td>
+                    <select id="g1_runDirection">
+                        <option value="away" selected="selected">Away</option>
+                        <option value="towards">Towards</option>
+                    </select>
+                </td>
+                <td>
+                    <select id="g2_runDirection">
+                    <option value="away">Away</option>
+                    <option value="towards" selected="selected">Towards</option>
+                    </select>
+                </td>
+            </tr>
+            <tr class="hiddenRow">
+                <td>Speed</td>
+                <td><input type="number" id="g1_speed" value="2" min="0" step="1"></td>
+                <td><input type="number" id="g2_speed" value="5" min="0" step="1"></td>
+            </tr>
+            <tr class="hiddenRow">
+                <td>Run Error</td>
+                <td><input type="number" id="g1_runError" value="0.7" min="0" step="0.1"></td>
+                <td><input type="number" id="g2_runError" value="0.7" min="0" step="0.1"></td>
+            </tr>
+            <tr class="hiddenRow">
+                <td>Sight Distance</td>
+                <td><input type="number" id="g1_sightDist" value="100" min="0"></td>
+                <td><input type="number" id="g2_sightDist" value="100" min="0"></td>
+            </tr>
+            <tr class="hiddenRow">
+                <td>Fight Distance</td>
+                <td><input type="number" id="g1_fightDist" value="5" min="0"></td>
+                <td><input type="number" id="g2_fightDist" value="5" min="0"></td>
+            </tr>
+        </table>
+        <div id="showMoreRows">[Show More]</div>
+        <div id="play_button">Fight!</div>
+    </div>
+
+    <div id="reset">
+        <div id="whoWon">Human won!</div>
+        <div id="reset_scoreboard">
+            <span id="scoreboard_g1_count">100</span> - <span id="scoreboard_g2_count">1000</span>
+        </div>
+        <div id="reset_click">Click to Reset</div>
+    </div>
+
+    <div id="welcomePanelShowButton">
+        Open Menu
+    </div>
+</body>
+<script src="main.js"></script>
+</html>
